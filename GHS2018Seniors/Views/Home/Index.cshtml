@@ -1,0 +1,102 @@
+﻿@model IEnumerable<GHS2018Seniors.ParentStudentContact>
+
+@{
+    ViewBag.Title = "GHS 2018/2019 Seniors App";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Student and Parent (Guardian) Contacts</h2>
+
+<p>
+    @Html.ActionLink("Add New Student/Parent(Guardian)", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactFName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactLName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomeWorkNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CellNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentFName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentLName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentEmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentCellNumber)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.HelpWithFloat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HelpWithSkit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HelpWithFood)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactFName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactLName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeWorkNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CellNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentFName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentLName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentEmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentCellNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HelpWithFloat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HelpWithSkit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HelpWithFood)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ContactId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ContactId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ContactId })
+            </td>
+        </tr>
+    }
+
+</table>
